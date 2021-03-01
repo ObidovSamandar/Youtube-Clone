@@ -66,8 +66,21 @@ if (getVideos != null) {
         videoDuration.setAttribute('class', 'videoTime');
         videoDuration.innerText = '33:36';
 
+        let wathLaterQueue=document.createElement('p')
+        wathLaterQueue.setAttribute('class','watchLaterQueue')
+
+        let span1=document.createElement('span')
+        let span2=document.createElement('span')
+        span1.setAttribute('class','material-icons')
+        span1.innerText='watch_later'
+        span2.setAttribute('class','material-icons');
+        span2.innerText='playlist_add_check'
+        wathLaterQueue.appendChild(span1)
+        wathLaterQueue.appendChild(span2)
+
         frameBackDiv.appendChild(img);
         frameBackDiv.appendChild(videoDuration);
+        frameBackDiv.appendChild(wathLaterQueue)
 
         let viedasdf = elems.iframe;
         divVideo.innerHTML = viedasdf;
@@ -153,8 +166,8 @@ for (let elem of videoFrame) {
         let createFrame = document.createElement('iframe');
         createFrame.setAttribute('src', `${firstchildElem.src}`)
         createFrame.setAttribute('frameborder', `${firstchildElem.frameborder}`)
-        createFrame.setAttribute('width', '700')
-        createFrame.setAttribute('height', '400')
+        createFrame.setAttribute('width', '750')
+        createFrame.setAttribute('height', '450')
         showVideoItemUser.firstElementChild.appendChild(createFrame)
     }
 }
@@ -207,7 +220,7 @@ function listeningUser(mic, searchInput) {
 
 let searchIcon = document.getElementById('searchIcon');
 
-function resHeaderContents(x,y) {
+function resHeaderContents(x) {
     let resSearchContent = document.querySelector('.searchInput');
     let returnBack = document.getElementById('back');
     if (x.matches) {
